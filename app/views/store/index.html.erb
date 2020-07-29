@@ -7,6 +7,9 @@
 
 <ul class="catalog">
  <% cache @products do %>
+ <% if session[:counter] > 5 %>
+  <p><%= pluralize(session[:counter], 'time') %> you visited this page.</p>
+ <% end %>
   <% @products.each do |product| %>
    <% cache product do %>
     <li>
@@ -17,6 +20,7 @@
       </p>
       <div class="price">
         <%= number_to_currency(product.price) %>
+	<%= button_to 'Add to Cart', line_items_path(product_id: product.id )%>
       </div>
     </li>
    <% end %>
