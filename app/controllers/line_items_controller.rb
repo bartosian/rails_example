@@ -8,7 +8,7 @@
 #---
 class LineItemsController < ApplicationController
   include CurrentCart
-  before_action :set_cart, only: [:create]
+  before_action :set_cart, only: [:create, :update, :destroy]
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
 
   # GET /line_items
@@ -54,9 +54,18 @@ class LineItemsController < ApplicationController
   # PATCH/PUT /line_items/1
   # PATCH/PUT /line_items/1.json
   def update
+    @line_item = LineItem.find(params[:id])
+    quantity = params[:quantity].to_i - 1    
+  
+    if quantity == 0
+      destroy
+      return
+    end
+
     respond_to do |format|
-      if @line_item.update(line_item_params)
+      if @line_item.update(quantity: quantity)
         format.html { redirect_to @line_item, notice: 'Line item was successfully updated.' }
+        format.js
         format.json { render :show, status: :ok, location: @line_item }
       else
         format.html { render :edit }
@@ -71,6 +80,7 @@ class LineItemsController < ApplicationController
     @line_item.destroy
     respond_to do |format|
       format.html { redirect_to line_items_url, notice: 'Line item was successfully destroyed.' }
+      format.js
       format.json { head :no_content }
     end
   end
@@ -86,6 +96,5 @@ class LineItemsController < ApplicationController
     def line_item_params
       params.require(:line_item).permit(:product_id)
     end
-  #...
 end
 
