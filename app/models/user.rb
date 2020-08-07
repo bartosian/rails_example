@@ -3,7 +3,7 @@ class User < ApplicationRecord
   has_secure_password
   after_destroy :ensure_an_admin_remains
 
-  class Error < StandartError
+  class Error
   end
 
   private
