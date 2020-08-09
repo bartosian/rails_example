@@ -1,6 +1,11 @@
 require 'pago'
+require "encrypter"
 
 class Order < ApplicationRecord
+	encrypter = Encrypter.new([:name, :email])
+	before_save encrypter
+	after_save encrypter
+	after_find encrypter
 
 	has_many :line_items, dependent: :destroy
 	enum pay_type: {
@@ -49,4 +54,8 @@ class Order < ApplicationRecord
 			raise payment_result.error
 		end
 	end
+	
+	protected
+		def after_find
+		end
 end
