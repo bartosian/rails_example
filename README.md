@@ -23,5 +23,5 @@ Things you may want to cover:
 
 * ...
 
-[![Build status](http://teamcity.ksd1447.com/guestAuth/app/rest/builds/buildType:(id:Healthmatters_AwsReportGenerator)/statusIcon.svg)](http://teamcity.ksd1447.com/viewType.html?buildTypeId=Healthmatters_AwsReportGenerator)
+[![Build status](http://teamcity.ksd1447.com/guestAuth/app/rest/builds/buildType:(id:Healthmatters_SyncS3Artifact)/statusIcon.svg)](http://teamcity.ksd1447.com/viewType.html?buildTypeId=Healthmatters_SyncS3Artifact)
 
