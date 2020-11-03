@@ -22,3 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+&lt;a href="https://YOURTEAMCITYURL/viewType.html?buildTypeId=YOURBUILDID&guest=1"&gt;
+&lt;img src="https://YOURTEAMCITYURL/app/rest/builds/buildType:(id:YOURBUILDID)/statusIcon"/&gt;
+&lt;/a&gt;
