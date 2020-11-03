@@ -23,6 +23,5 @@ Things you may want to cover:
 
 * ...
 
-&lt;a href="https://YOURTEAMCITYURL/viewType.html?buildTypeId=YOURBUILDID&guest=1"&gt;
-&lt;img src="https://YOURTEAMCITYURL/app/rest/builds/buildType:(id:YOURBUILDID)/statusIcon"/&gt;
-&lt;/a&gt;
+[![Build status](https://teamcity.ksd1447.com/guestAuth/app/rest/builds/buildType:(id:Healthmatters_AwsReportGenerator)/statusIcon.svg)](https://teamcity.ksd1447.com/viewType.html?buildTypeId=Healthmatters_AwsReportGenerator)
+
